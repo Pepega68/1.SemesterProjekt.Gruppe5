@@ -1,5 +1,7 @@
 package model; 
 import java.util.ArrayList;
+import java.util.Optional;
+
 /**
  * Contains Person after they're created
  */
@@ -36,21 +38,17 @@ public class PersonContainer
     {
         Person x = null;
         boolean finished = false;
-        int index = 0;
-        for(Person p : persons)
-        {
-            if(index == persons.size())
+        if(!persons.isEmpty()){
+            for(Person c : persons)
             {
-                finished = true;
+                if(c.getPhoneNumber().equals(phoneNumber))
+                {
+                    return c;
+                }
+        
             }
-            else if(p.getPhoneNumber().equals(phoneNumber))
-            {
-                x = p;
-                finished = true;
-            }
-            index++;
         }
-        return x;
+        return null;
     }
     
     /**
