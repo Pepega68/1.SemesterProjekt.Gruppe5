@@ -28,11 +28,11 @@ public class PersonContainer
     }
     
     /**
-     * Searches for person by name
-     * @param String name
-     * @return Person
+     * Searches for person by number
+     * @param int
+     * @return phoneNumber
      */
-    public Person findPersonByName(String name)
+    public Person findPersonByPhoneNumber(String phoneNumber)
     {
         Person x = null;
         boolean finished = false;
@@ -43,7 +43,7 @@ public class PersonContainer
             {
                 finished = true;
             }
-            else if(p.getName().equals(name))
+            else if(p.getPhoneNumber().equals(phoneNumber))
             {
                 x = p;
                 finished = true;
