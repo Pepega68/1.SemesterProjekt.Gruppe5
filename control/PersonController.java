@@ -1,4 +1,4 @@
-package model;
+package control;
 import model.PersonContainer;
 import model.Person;
 /**
@@ -28,4 +28,3 @@ public class PersonController
         return container.findPersonByPhoneNumber(phoneNumber);
     }
 }
-
