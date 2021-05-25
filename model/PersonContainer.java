@@ -1,6 +1,7 @@
 package model; 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.NoSuchElementException;
 
 /**
  * Contains Person after they're created
@@ -48,7 +49,7 @@ public class PersonContainer
         
             }
         }
-        return null;
+        throw new NoSuchElementException("Person ikke fundet");
     }
     
     /**

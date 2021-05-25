@@ -3,6 +3,8 @@ import controller.SaleController;
 import java.util.Scanner;
 import java.text.NumberFormat;
 import model.Sale;
+import java.util.NoSuchElementException;
+
 /**
  * UI for Sale creation
  */
@@ -125,7 +127,16 @@ public class SaleUI
      */
     private void createSale()
     {
-        Sale l = SaleController.createSale();
+        Sale l = saleController.createSale();
         System.out.println("Salget er registreret og tilføjet.\n");
+    }
+    
+    private void endSale(){
+        System.out.println("Indtast telefonummer for at afslutte salget");
+        try{
+            saleController.endSale(scanner.next());
+        }catch(NoSuchElementException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
