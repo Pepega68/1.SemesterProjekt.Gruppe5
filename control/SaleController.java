@@ -2,6 +2,7 @@ package control;
 import model.Sale;
 import model.SaleContainer;
 import model.PersonContainer;
+import model.Person;
 import model.SLI;
 import java.util.NoSuchElementException;
 
@@ -18,6 +19,8 @@ public class SaleController
     private ProductController productController;
     private SaleContainer saleContainer;
     private PersonContainer personContainer;
+    private PersonController personController;
+    private Person person;
 
     /**
      * Constructor for objects of class SaleController
@@ -54,9 +57,18 @@ public class SaleController
         this.currentSale = new Sale();
     }
 
+    public Person findCustomerByPhone(String phoneNumber)
+    {
+        person = personController.findPersonByPhoneNumber(phoneNumber);
+        return person;
+    }
     
-    
-    
+    public Sale endSale()
+    {
+        currentSale.addPerson(person);
+        //mangles at put produkt på
+        return currentSale;
+    }
 
 }
 
