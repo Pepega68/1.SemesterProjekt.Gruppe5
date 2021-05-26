@@ -2,6 +2,7 @@ package model;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 /**
  * Write a description of class ProductContainer here.
@@ -35,11 +36,20 @@ public class ProductContainer
     }
     
     public Map.Entry<Product, Integer> getProduct(int barcode){
-        for(Map.Entry<Product, Integer> entry: products.entrySet()){
+        for(Map.Entry<Product, Integer> entry : products.entrySet()){
             if(entry.getKey().getBarcode() == barcode){
                 return entry;
             }
         }
         throw new NoSuchElementException("Produkt ikke fundet");
     }
+    
+    /*public Product getProduct(int barcode){
+        for(Product entry : products.keySet()){
+            if(entry.getBarcode() == barcode){
+                return entry;
+            }
+        }
+        throw new NoSuchElementException("Produkt ikke fundet");
+    }*/
 }
