@@ -12,7 +12,6 @@ public class SLI
     // instance variables - replace the example below with your own
     private int quantity;
     private Product product;
-
     /**
      * Constructor for objects of class SLI
      */
@@ -21,5 +20,4 @@ public class SLI
         this.product = product;
         this.quantity = quantity;                
     }
-
 }

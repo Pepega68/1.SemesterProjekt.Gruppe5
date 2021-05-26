@@ -18,24 +18,22 @@ public class SaleController
     private Sale currentSale;
     private ProductController productController;
     private SaleContainer saleContainer;
-    private PersonContainer personContainer;
     private PersonController personController;
-    private Person person;
 
     /**
      * Constructor for objects of class SaleController
      */
-    public SaleController(ProductController productController)
+    public SaleController(ProductController productController, PersonController personController)
     {
         this.productController = productController;
+        this.personController = personController;
         this.saleContainer = SaleContainer.getInstance();
-        this.personContainer = PersonContainer.getInstance();
     }
 
-    public void enterProduct(int productId, int quantity){
+    public void enterProduct(int barcode, int quantity){
         currentSale.addSLI(
             new SLI( 
-                productController.findProduct(productId),
+                productController.findProductByBarcode(barcode),
                 quantity
             )
         );
@@ -43,11 +41,14 @@ public class SaleController
 
     public void endSale(String phoneNumber){
         try{
+            //Find and add person to sale 
             currentSale.addPerson(
-                personContainer.findPersonByPhoneNumber(phoneNumber)
+                personController.findPersonByPhoneNumber(phoneNumber)
             );
 
+            //Add sale to the container
             saleContainer.addSale(currentSale);
+            //Since findPersonByPhoneNumber throws an exception, we catch it here and print an error message
         } catch(NoSuchElementException e){
             System.out.println(e.getMessage());
         }
@@ -57,18 +58,9 @@ public class SaleController
         this.currentSale = new Sale();
     }
 
-    public Person findCustomerByPhone(String phoneNumber)
+    public Person findPersonByPhoneNumber(String phoneNumber)
     {
-        person = personController.findPersonByPhoneNumber(phoneNumber);
-        return person;
+        return personController.findPersonByPhoneNumber(phoneNumber);
     }
-    
-    public Sale endSale()
-    {
-        currentSale.addPerson(person);
-        //mangles at put produkt på
-        return currentSale;
-    }
-
 }
 

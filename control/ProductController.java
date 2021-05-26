@@ -16,7 +16,7 @@ public class ProductController
         productContainer = ProductContainer.getInstance();
     }
 
-    public Product findProductByID(int barcode){
+    public Product findProductByBarcode(int barcode){
         return productContainer.getProduct(barcode).getKey();
     }
 }

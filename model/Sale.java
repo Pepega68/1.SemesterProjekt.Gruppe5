@@ -11,10 +11,8 @@ import java.time.LocalDate;
  */
 public class Sale
 {
-    // instance variables - replace the example below with your own
     private ArrayList<SLI> saleListItems;
     private LocalDate date;
-    private int totalPrice;
     private Person customer;
     /**
      * Constructor for objects of class Sale
@@ -34,6 +32,6 @@ public class Sale
     
     public void addPerson(Person customer)
     {
-        //this.customer = customer.;
+        this.customer = customer;
     }
 }

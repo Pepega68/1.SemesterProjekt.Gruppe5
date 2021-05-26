@@ -37,8 +37,6 @@ public class PersonContainer
      */
     public Person findPersonByPhoneNumber(String phoneNumber)
     {
-        Person x = null;
-        boolean finished = false;
         if(!persons.isEmpty()){
             for(Person c : persons)
             {

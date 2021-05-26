@@ -1,5 +1,7 @@
 package tui;
-import controller.SaleController;
+import control.SaleController;
+import control.PersonController;
+import control.ProductController;
 import java.util.Scanner;
 import java.text.NumberFormat;
 import model.Sale;
@@ -12,6 +14,8 @@ public class SaleUI
 {
     // instance variables
     private SaleController saleController;
+    private PersonController personController;
+    private ProductController productController;
     private Scanner scanner;
     private MainMenuUI main;
 
@@ -21,7 +25,9 @@ public class SaleUI
     public SaleUI()
     {
         // initialise instance variables
-        saleController = new SaleController();
+        personController = new PersonController();
+        productController = new ProductController();
+        saleController = new SaleController(productController, personController);
         scanner = new Scanner(System.in);
     }
 
@@ -49,6 +55,7 @@ public class SaleUI
             if(scanner.hasNextInt())
             {
                 int choice = scanner.nextInt();
+                
                 if(choice == 1)
                 {
                     findPerson();
