@@ -1,5 +1,5 @@
 package model;
-
+import model.Product;
 
 /**
  * Write a description of class SLI here.
@@ -10,26 +10,16 @@ package model;
 public class SLI
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int quantity;
+    private Product product;
 
     /**
      * Constructor for objects of class SLI
      */
-    public SLI()
+    public SLI(Product product, int quantity)
     {
-        // initialise instance variables
-        x = 0;
+        this.product = product;
+        this.quantity = quantity;                
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }
