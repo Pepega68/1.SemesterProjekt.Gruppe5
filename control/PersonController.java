@@ -6,16 +6,14 @@ import model.Person;
  */
 public class PersonController
 {
-    // instance variable
-    private PersonContainer container;
+    private PersonContainer personContainer;
 
     /**
      * Constructor for objects of class PersonController
      */
     public PersonController()
     {
-        // initialise instance variables
-        container = container.getInstance();
+        personContainer = PersonContainer.getInstance();
     }
 
     /**
@@ -25,6 +23,6 @@ public class PersonController
      */
     public Person findPersonByPhoneNumber(String phoneNumber)
     {
-        return container.findPersonByPhoneNumber(phoneNumber);
+        return personContainer.findPersonByPhoneNumber(phoneNumber);
     }
 }

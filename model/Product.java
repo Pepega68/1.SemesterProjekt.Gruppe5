@@ -13,6 +13,11 @@ public class Product {
         this.productCatagory = productCatagory;
     }
 
+    public void setProductID(int productID)
+    {
+        this.productID = productID;
+    }
+    
     public int getProductID()
     {
         return productID;

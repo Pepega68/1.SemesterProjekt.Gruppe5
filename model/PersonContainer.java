@@ -10,7 +10,7 @@ public class PersonContainer
 {
     private ArrayList<Person> persons;
     private static PersonContainer instance;
-    
+
     /**
      * Constructor for objects of class PersonContainer
      */
@@ -18,7 +18,7 @@ public class PersonContainer
     {
         persons = new ArrayList<>();       
     }
-    
+
     /**
      * Singleton method
      */
@@ -29,7 +29,7 @@ public class PersonContainer
         }
         return instance;
     }
-    
+
     /**
      * Searches for person by number
      * @param int
@@ -46,12 +46,12 @@ public class PersonContainer
                 {
                     return c;
                 }
-        
+
             }
         }
         throw new NoSuchElementException("Person ikke fundet");
     }
-    
+
     /**
      * Adds person to the container
      */
@@ -59,7 +59,7 @@ public class PersonContainer
     {
         persons.add(person);
     }
-    
+
     /**
      * Gets size from persons ArrayList
      */
