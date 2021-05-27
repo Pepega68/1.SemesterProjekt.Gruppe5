@@ -1,7 +1,8 @@
 package model;
 import java.util.ArrayList;
 import java.time.LocalDate;
-
+import model.Sale;
+import model.SLI;
 
 /**
  * Write a description of class Sale here.
@@ -19,7 +20,7 @@ public class Sale
      */
     public Sale()
     {
-
+        saleListItems = new ArrayList();
     }
 
     /**
@@ -27,7 +28,7 @@ public class Sale
      */
     public void addSLI(SLI sli)
     {
-        saleListItems.add(sli);
+       saleListItems.add(sli);
     }
     
     public void addPerson(Person customer)
