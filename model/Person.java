@@ -17,12 +17,11 @@ public class Person
     private String city;
     private String phoneNumber;
     private String personInfo;
-    private ArrayList<Person> persons;
 
     /**
      * Constructor for objects of class PersonContainer
      */
-    private Person(String name, String address, int postalCode, String city, String phoneNumber, String personInfo)
+    public Person(String name, String address, int postalCode, String city, String phoneNumber, String personInfo)
     {
         this.name = name;
         this.address = address;
@@ -30,7 +29,6 @@ public class Person
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.personInfo = personInfo;
-        persons = new ArrayList<>(); 
     }
 
     /**
@@ -66,13 +64,12 @@ public class Person
     }
 
     public int getPostalCode()
-
     {
         return postalCode;
     }
     
     public String getPersonInfo()
     {
-    return personInfo;
+        return personInfo;
     }
 }

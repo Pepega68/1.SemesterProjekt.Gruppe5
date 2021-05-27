@@ -4,13 +4,13 @@ public class Product {
     private String productInfo;
     private int barcode;
     private int productID;
-    private String productCatagory;
+    private String productCategory;
 
-    public Product(String productInfo, int barcode, int productID, String productCatagory){
+    public Product(String productInfo, int barcode, int productID, String productCategory){
         this.productInfo = productInfo;
         this.barcode = barcode;
         this.productID = productID;
-        this.productCatagory = productCatagory;
+        this.productCategory = productCategory;
     }
 
     public void setProductID(int productID)
@@ -33,9 +33,9 @@ public class Product {
         return barcode;
     }
 
-    public String getProductCatagory()
+    public String getProductCategory()
     {
-        return productCatagory;
+        return productCategory;
     }
 }
 

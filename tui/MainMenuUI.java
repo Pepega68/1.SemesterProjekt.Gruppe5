@@ -6,69 +6,46 @@ import java.util.Scanner;
  */
 public class MainMenuUI
 {
-    // instance variables
-    private int choice;
-    private Scanner scanner;
-    private LoanUI loanUI;
-    private TryMe tryMe;
-    /**
-     * Constructor for objects of class MainMenuUI
-     */
-    public MainMenuUI()
+    public void mainMenuStart()
     {
-        scanner = new Scanner(System.in);
-        loanUI = new LoanUI();
-    }
-
-    public void startApp()
-    {
-        printMenu();
-        boolean finished = false;
-        while(!finished)
+        boolean exit=false;
+        while (!exit) //! means while exit not is true (that is: false)
         {
-            if(scanner.hasNextInt())
+            int choice = openMainMenu();
+            SaleUI saleUI = new SaleUI();
+            switch (choice)
             {
-                int choice = scanner.nextInt();
-                if(choice == 1)
-                {
-                    loanUI.startMenu();
-                    finished = true;
-                }
-                else if(choice == 2)
-                {
-                    tryMe = new TryMe();
-                    tryMe.generateData();                
-                    System.out.println("Testdata genereret");
-                    System.out.println();
-                    printMenu();
-                }
-                else if(choice == 3)
-                {
-                    finished = true;
-                }
-                else
-                {
-                    System.out.println("Menupunkt findes ikke. Prøv igen.");
-                }
-            }
-            else
-            {
-                System.out.print("Forkert input. Valg være et nummer.");
-                scanner.next();
-            }
-        }
-    }
+                case 1:
+                saleUI.startMenu();
+                break;
+                
+                case 2:
+                TryMe tryMe = new TryMe();
+                tryMe.generateData();
+                System.out.println("Generede test data.");
+                break;
+                case 3:
+                exit = true;
+                break;
+                default: 
+                System.out.println(" Are you dalbaeb m8? Valg mellem 1 og 3");
+            }//end switch
+        }//end while
+    }//end start
+    
+    private int openMainMenu()
+    {       
+        // creates a keyboard object to read input
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\f *** SCIK ASS MENU ***");
+        System.out.println(" 1. ALT ER GRATIS");
+        System.out.println(" 2. Generer test data");
+        System.out.println(" 3. QUITS");
+        System.out.print("\n Bestem dig: ");
 
-    /**
-     * Prints menu for user choice
-     */
-    private void printMenu() 
-    {
-        System.out.println("**** Hoved Menu ****");
-        System.out.println("(1) Opret salg");
-        System.out.println("(2) Generer testdata");
-        System.out.println("(3) Luk program");
-        System.out.println();
-        System.out.print("Valg: ");
+        int choice = scanner.nextInt();
+
+        return choice;
     }
 }
+

@@ -55,7 +55,7 @@ public class SaleController
     }
 
     public void createSale(){
-        this.currentSale = new Sale();
+        currentSale = new Sale();
     }
 
     public Person findPersonByPhoneNumber(String phoneNumber)

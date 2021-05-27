@@ -2,6 +2,9 @@ package tui;
 import control.SaleController;
 import control.PersonController;
 import control.ProductController;
+
+import model.ProductContainer;
+
 import java.util.Scanner;
 import java.text.NumberFormat;
 import model.Sale;
@@ -18,8 +21,10 @@ public class SaleUI
     private ProductController productController;
     private Scanner scanner;
     private MainMenuUI main;
+    
+    private ProductContainer productContainer;
 
-    /**
+     /**
      * Constructor for objects of class LoanUI
      */
     public SaleUI()
@@ -34,52 +39,57 @@ public class SaleUI
     /**
      * Prints text menu for userprompts
      */
-    private void saleUI()
-    {
+        private int openSaleMenu()
+    {       
+        // creates a keyboard object to read input
+        Scanner scanner = new Scanner(System.in);
+        
         System.out.println("*** Udlåns Menu ***");
         System.out.println("(1) Opret salg");
         System.out.println("(2) Tilbage til hovedmenu ");
         System.out.println();
         System.out.print("Valg: ");
-    }
 
+        int choice = scanner.nextInt();
+
+        return choice;
+    }
+    
     /**
      * Main method
      */
     public void startMenu()
     {    
         boolean finished = false;
-        saleUI();
+        //saleUI();
         while(!finished)
         {
-            if(scanner.hasNextInt())
+            int choice = openSaleMenu();
+            switch(choice)
             {
-                int choice = scanner.nextInt();
                 
-                if(choice == 1)
-                {
-                    findPerson();
-                    findCopy();
+                
+                case 1:
                     createSale();
-                    SaleUI();
-                }
-                else if(choice == 2)
-                {
+                    findProduct();
+                    endSale();
+                break;
+                case 2:
+                
                     finished = true;
-                }
-                else
-                {
-                    System.out.println("Menupunkt findes ikke. Prøv igen.");
-                }
+                break;
+                default: 
+                System.out.println(" Are you dalbaeb m8? Valg mellem 1 og 2");
             }
-            else
+            
+            /*else
             {
                 System.out.print("Forkert input. Valg være et nummer.");
                 scanner.next();
-            }
+            }*/
         }
         MainMenuUI main = new MainMenuUI();
-        main.startApp();
+        //main.startApp();
     }    
 
     /**
@@ -87,46 +97,26 @@ public class SaleUI
      */
     private void findPerson()
     {
-        System.out.println("Indtast låners navn: ");
-        String name = scanner.next();
-        loanController.findPersonByName(name);
-        while(!loanController.nullPersonTester()) // Check that a person is returned
-        {
-            System.out.print("Låner findes ikke. Prøv igen.");
-            name = scanner.next();
-            loanController.findPersonByName(name);
-        }
+        System.out.println("Indtast låners telefon nummer: ");
+        String phoneNumber = scanner.next();
+        saleController.findPersonByPhoneNumber(phoneNumber);
+        /*System.out.print("Låner findes ikke. Prøv igen.");
+        phoneNumber = scanner.next();
+        saleController.findPersonByPhoneNumber(phoneNumber);*/
     }
 
     /**
      * Finds copy of LP by serialnumber
      */
-    private void findCopy()
+    
+    private void findProduct()
     {
-        System.out.println("Indtast serienummer på den valgte kopi: ");
-        Integer serialNumber = null;
-        boolean finished = false;
-        while(!finished)
-        {
-            if(scanner.hasNextInt()) // Checks the input is an int
-            {
-                serialNumber = scanner.nextInt();
-                loanController.findCopyBySerialNumber(serialNumber);
-                if(loanController.nullCopyTester()) // Checks if a copy is returned
-                {
-                    finished = true;
-                }
-                else // Error message if no copy is returned
-                {
-                    System.out.println("Serienummer findes ikke. Prøv igen.");
-                }
-            }
-            else // Error message if input isn't an int
-            {
-                System.out.print("Forkert input. Skal være et nummer.");
-                scanner.next();
-            }
-        }
+        System.out.println("Indtast barcode nr. og antal af produkter: ");
+        Integer barcode;
+        Integer quantity;
+        barcode = scanner.nextInt();
+        quantity = scanner.nextInt(); //??
+        saleController.enterProduct(barcode,quantity);
     }
 
     /**
@@ -134,7 +124,7 @@ public class SaleUI
      */
     private void createSale()
     {
-        Sale l = saleController.createSale();
+        saleController.createSale();
         System.out.println("Salget er registreret og tilføjet.\n");
     }
     
