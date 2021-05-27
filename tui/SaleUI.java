@@ -44,7 +44,9 @@ public class SaleUI
 
         System.out.println("*** Menu ***");
         System.out.println("(1) Opret salg");
-        System.out.println("(2) Tilbage til hovedmenu ");
+        System.out.println("(2) Tilføj flere produkter");
+        System.out.println("(3) Afslut salget ");
+        System.out.println("(4) Tilbage til hovedmenu ");
         System.out.println();
         System.out.print("Valg: ");
 
@@ -69,9 +71,17 @@ public class SaleUI
                 case 1:
                 createSale();
                 findProduct();
-                endSale();
+                System.out.println("Ønsker du andre produkter?");
                 break;
                 case 2:
+                findProduct();
+                System.out.println("Produkter tilføjet til kurven");
+                break;
+                case 3:
+                endSale();
+                System.out.println("Salget er gennemført");
+                break;
+                case 4:
                 finished = true;
                 break;
                 default: 
