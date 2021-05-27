@@ -44,7 +44,6 @@ public class PersonContainer
                 {
                     return c;
                 }
-
             }
         }
         throw new NoSuchElementException("Person ikke fundet");
