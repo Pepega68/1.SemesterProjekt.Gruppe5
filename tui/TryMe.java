@@ -27,12 +27,9 @@ public class TryMe
         Person tester = new Person("Mogens", "Strandvejen 42", 9000, "Aalleren" , "42042069" , "Debil");
         personContainer.addPerson(tester); 
         Product testProduct = new Product("NUTS", 1234, 4321, "STUFF"); 
+        Product testTestProduct = new Product("Søm", 4200, 69, "STUFF"); 
         productContainer.addProduct(testProduct, 20);
-        
-        /*LP plade = new LP("Kandis greatest hits", "Kandis", 12345);
-        Copy cp = new Copy(12345, "01-01-1970", "500mil");
-        lpContainer.addLP(plade);
-        plade.addCopy(cp);*/
+        productContainer.addProduct(testTestProduct, 20);
     }       
 }
 

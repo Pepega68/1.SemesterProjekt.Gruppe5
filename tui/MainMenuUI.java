@@ -18,17 +18,17 @@ public class MainMenuUI
                 case 1:
                 saleUI.startMenu();
                 break;
-                
                 case 2:
                 TryMe tryMe = new TryMe();
                 tryMe.generateData();
-                System.out.println("Generede test data.");
+                System.out.println("Generer test data.");
                 break;
                 case 3:
                 exit = true;
                 break;
                 default: 
-                System.out.println(" Are you dalbaeb m8? Valg mellem 1 og 3");
+                System.out.println("ugyldig valgmulighed");
+                break;
             }//end switch
         }//end while
     }//end start
@@ -37,12 +37,11 @@ public class MainMenuUI
     {       
         // creates a keyboard object to read input
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\f *** SCIK ASS MENU ***");
-        System.out.println(" 1. ALT ER GRATIS");
+        System.out.println("\f *** MENU ***");
+        System.out.println(" 1. Opret et salg");
         System.out.println(" 2. Generer test data");
-        System.out.println(" 3. QUITS");
-        System.out.print("\n Bestem dig: ");
-
+        System.out.println(" 3. Afslut program");
+        System.out.print("\n Vælg mellem 1 og 2 eller 3: ");
         int choice = scanner.nextInt();
 
         return choice;

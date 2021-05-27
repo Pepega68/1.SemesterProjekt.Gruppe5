@@ -2,9 +2,7 @@ package tui;
 import control.SaleController;
 import control.PersonController;
 import control.ProductController;
-
 import model.ProductContainer;
-
 import java.util.Scanner;
 import java.text.NumberFormat;
 import model.Sale;
@@ -21,10 +19,10 @@ public class SaleUI
     private ProductController productController;
     private Scanner scanner;
     private MainMenuUI main;
-    
+
     private ProductContainer productContainer;
 
-     /**
+    /**
      * Constructor for objects of class LoanUI
      */
     public SaleUI()
@@ -39,12 +37,12 @@ public class SaleUI
     /**
      * Prints text menu for userprompts
      */
-        private int openSaleMenu()
+    private int openSaleMenu()
     {       
         // creates a keyboard object to read input
         Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("*** Udlåns Menu ***");
+
+        System.out.println("*** Menu ***");
         System.out.println("(1) Opret salg");
         System.out.println("(2) Tilbage til hovedmenu ");
         System.out.println();
@@ -54,7 +52,7 @@ public class SaleUI
 
         return choice;
     }
-    
+
     /**
      * Main method
      */
@@ -67,51 +65,32 @@ public class SaleUI
             int choice = openSaleMenu();
             switch(choice)
             {
-                
-                
+
                 case 1:
-                    createSale();
-                    findProduct();
-                    endSale();
+                createSale();
+                findProduct();
+                endSale();
                 break;
                 case 2:
-                
-                    finished = true;
+                finished = true;
                 break;
                 default: 
-                System.out.println(" Are you dalbaeb m8? Valg mellem 1 og 2");
+                System.out.println("ugyldig valgmulighed");
+                break;
             }
-            
-            /*else
-            {
-                System.out.print("Forkert input. Valg være et nummer.");
-                scanner.next();
-            }*/
+
         }
         MainMenuUI main = new MainMenuUI();
         //main.startApp();
     }    
 
     /**
-     * Finds person by name receiving the loan
-     */
-    private void findPerson()
-    {
-        System.out.println("Indtast låners telefon nummer: ");
-        String phoneNumber = scanner.next();
-        saleController.findPersonByPhoneNumber(phoneNumber);
-        /*System.out.print("Låner findes ikke. Prøv igen.");
-        phoneNumber = scanner.next();
-        saleController.findPersonByPhoneNumber(phoneNumber);*/
-    }
-
-    /**
      * Finds copy of LP by serialnumber
      */
-    
+
     private void findProduct()
     {
-        System.out.println("Indtast barcode nr. og antal af produkter: ");
+        System.out.println("Indtast barcode nummer og antal af produkter: ");
         Integer barcode;
         Integer quantity;
         barcode = scanner.nextInt();
@@ -125,15 +104,18 @@ public class SaleUI
     private void createSale()
     {
         saleController.createSale();
-        System.out.println("Salget er registreret og tilføjet.\n");
+        System.out.println("Salget er registreret.\n");
     }
-    
+
     private void endSale(){
         System.out.println("Indtast telefonummer for at afslutte salget");
         try{
-            saleController.endSale(scanner.next());
+            String telefonNummer = scanner.next();
+            saleController.endSale(telefonNummer);
+
         }catch(NoSuchElementException e){
             System.out.println(e.getMessage());
         }
+        System.out.println("købet er nu afsluttet.");
     }
 }
