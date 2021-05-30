@@ -17,6 +17,6 @@ public class ProductController
     }
 
     public Product findProductByBarcode(int barcode){
-        return productContainer.getProduct(barcode).getKey();
+        return productContainer.getProduct(barcode);//.getKey();
     }
 }

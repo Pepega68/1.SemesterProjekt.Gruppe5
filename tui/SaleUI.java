@@ -70,11 +70,11 @@ public class SaleUI
 
                 case 1:
                 createSale();
-                findProduct();
+                findProductByBarcode();
                 System.out.println("Ønsker du andre produkter?");
                 break;
                 case 2:
-                findProduct();
+                findProductByBarcode();
                 System.out.println("Produkter tilføjet til kurven");
                 break;
                 case 3:
@@ -98,14 +98,14 @@ public class SaleUI
      * Finds copy of LP by serialnumber
      */
 
-    private void findProduct()
+    private void findProductByBarcode()
     {
         System.out.println("Indtast barcode nummer og antal af produkter: ");
         Integer barcode;
         Integer quantity;
         barcode = scanner.nextInt();
-        quantity = scanner.nextInt(); //??
-        saleController.enterProduct(barcode,quantity);
+        quantity = scanner.nextInt();
+        saleController.findProductByBarcode(barcode,quantity);//try catch
     }
 
     /**
@@ -120,8 +120,8 @@ public class SaleUI
     private void endSale(){
         System.out.println("Indtast telefonummer for at afslutte salget");
         try{
-            String telefonNummer = scanner.next();
-            saleController.endSale(telefonNummer);
+            String phoneNumber = scanner.next();
+            saleController.endSale(phoneNumber);
 
         }catch(NoSuchElementException e){
             System.out.println(e.getMessage());

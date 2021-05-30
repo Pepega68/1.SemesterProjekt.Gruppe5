@@ -35,21 +35,21 @@ public class ProductContainer
         products.put(product, quantity);
     }
     
-    public Map.Entry<Product, Integer> getProduct(int barcode){
+    /*public Map.Entry<Product, Integer> getProduct(int barcode){
         for(Map.Entry<Product, Integer> entry : products.entrySet()){
             if(entry.getKey().getBarcode() == barcode){
                 return entry;
             }
         }
         throw new NoSuchElementException("Produkt ikke fundet");
-    }
+    }*/
     
-    /*public Product getProduct(int barcode){
-        for(Product entry : products.keySet()){
-            if(entry.getBarcode() == barcode){
-                return entry;
+    public Product getProduct(int barcode){
+        for(Product p : products.keySet()){
+            if(p.getBarcode() == barcode){
+                return p;
             }
         }
         throw new NoSuchElementException("Produkt ikke fundet");
-    }*/
+    }
 }

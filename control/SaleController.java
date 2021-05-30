@@ -30,7 +30,7 @@ public class SaleController
         this.saleContainer = SaleContainer.getInstance();
     }
 
-    public void enterProduct(int barcode, int quantity){
+    public void findProductByBarcode(int barcode, int quantity){
         currentSale.addSLI(
             new SLI( 
                 productController.findProductByBarcode(barcode),
