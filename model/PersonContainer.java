@@ -24,7 +24,8 @@ public class PersonContainer
      */
     public static PersonContainer getInstance() 
     {
-        if(instance == null) {
+        if(instance == null) 
+        {
             instance = new PersonContainer();
         }
         return instance;
@@ -37,7 +38,8 @@ public class PersonContainer
      */
     public Person findPersonByPhoneNumber(String phoneNumber)
     {
-        if(!persons.isEmpty()){
+        if(!persons.isEmpty())
+        {
             for(Person c : persons)
             {
                 if(c.getPhoneNumber().equals(phoneNumber))

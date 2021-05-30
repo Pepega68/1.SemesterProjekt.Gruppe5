@@ -30,7 +30,8 @@ public class SaleController
         this.saleContainer = SaleContainer.getInstance();
     }
 
-    public void findProductByBarcode(int barcode, int quantity){
+    public void findProductByBarcode(int barcode, int quantity)
+    {
         currentSale.addSLI(
             new SLI( 
                 productController.findProductByBarcode(barcode),
@@ -39,8 +40,10 @@ public class SaleController
         );
     }
 
-    public void endSale(String phoneNumber){
-        try{
+    public void endSale(String phoneNumber)
+    {
+        try
+        {
             //Find and add person to sale 
             currentSale.addPerson(
                 personController.findPersonByPhoneNumber(phoneNumber)
@@ -49,12 +52,15 @@ public class SaleController
             //Add sale to the container
             saleContainer.addSale(currentSale);
             //Since findPersonByPhoneNumber throws an exception, we catch it here and print an error message
-        } catch(NoSuchElementException e){
+        } 
+        catch(NoSuchElementException e)
+        {
             System.out.println(e.getMessage());
         }
     }
 
-    public void createSale(){
+    public void createSale()
+    {
         currentSale = new Sale();
     }
 

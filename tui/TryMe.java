@@ -30,5 +30,5 @@ public class TryMe
         Product testTestProduct = new Product("Søm", 4200, 69, "STUFF"); 
         productContainer.addProduct(testProduct, 20);
         productContainer.addProduct(testTestProduct, 20);
-    }       
+    }
 }

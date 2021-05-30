@@ -25,13 +25,15 @@ public class ProductContainer
 
     public static ProductContainer getInstance()
     {
-        if(instance == null) {
+        if(instance == null) 
+        {
             instance = new ProductContainer();
         }
         return instance;
     }
     
-    public void addProduct(Product product, int quantity){
+    public void addProduct(Product product, int quantity)
+    {
         products.put(product, quantity);
     }
     
@@ -44,9 +46,12 @@ public class ProductContainer
         throw new NoSuchElementException("Produkt ikke fundet");
     }*/
     
-    public Product getProduct(int barcode){
-        for(Product p : products.keySet()){
-            if(p.getBarcode() == barcode){
+    public Product getProduct(int barcode)
+    {
+        for(Product p : products.keySet())
+        {
+            if(p.getBarcode() == barcode)
+            {
                 return p;
             }
         }

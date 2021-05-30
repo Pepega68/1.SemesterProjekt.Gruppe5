@@ -117,13 +117,16 @@ public class SaleUI
         System.out.println("Salget er registreret.\n");
     }
 
-    private void endSale(){
+    private void endSale()
+    {
         System.out.println("Indtast telefonummer for at afslutte salget");
-        try{
+        try
+        {
             String phoneNumber = scanner.next();
             saleController.endSale(phoneNumber);
-
-        }catch(NoSuchElementException e){
+        }
+        catch(NoSuchElementException e)
+        {
             System.out.println(e.getMessage());
         }
         System.out.println("købet er nu afsluttet.");

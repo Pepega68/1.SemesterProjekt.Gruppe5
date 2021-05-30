@@ -5,7 +5,9 @@ public class Product {
     private int barcode;
     private int productID;
     private String productCategory;
-    public Product(String productInfo, int barcode, int productID, String productCategory){
+    
+    public Product(String productInfo, int barcode, int productID, String productCategory)
+    {
         this.productInfo = productInfo;
         this.barcode = barcode;
         this.productID = productID;

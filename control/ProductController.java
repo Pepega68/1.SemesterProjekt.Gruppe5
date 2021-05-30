@@ -12,11 +12,13 @@ public class ProductController
     // instansvariabler - erstat eksemplet herunder med dine egne variabler
     private ProductContainer productContainer;
 
-    public ProductController(){
+    public ProductController()
+    {
         productContainer = ProductContainer.getInstance();
     }
 
-    public Product findProductByBarcode(int barcode){
+    public Product findProductByBarcode(int barcode)
+    {
         return productContainer.getProduct(barcode);//.getKey();
     }
 }
