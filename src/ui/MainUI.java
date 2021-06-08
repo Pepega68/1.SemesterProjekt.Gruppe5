@@ -31,7 +31,7 @@ public class MainUI extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the frame. Nice comment dude
 	 */
 	public MainUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
