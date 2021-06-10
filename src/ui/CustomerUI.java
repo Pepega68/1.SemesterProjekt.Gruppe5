@@ -83,7 +83,7 @@ public class CustomerUI extends JDialog implements ActionListener{
 			volapykLabel.setBounds(10,170,80,25);
 			panel.add(volapykLabel);
 			
-			JTextField volaPykText = new JTextField(20); //personInfo?
+			JTextField volaPykText = new JTextField(20); 
 			volaPykText.setBounds(100,170,165,25);
 			panel.add(volaPykText);
 			
