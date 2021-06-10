@@ -44,6 +44,7 @@ public class MainUI extends JFrame {
 		JButton btnNewButton = new JButton("Customers");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnNewButton.setBounds(335, 11, 89, 23);
