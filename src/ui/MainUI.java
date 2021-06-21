@@ -80,17 +80,15 @@ public class MainUI extends JFrame {
 	}
 	
 	private void customerUI() {
-		myDialog = new CustomerUI();
-		myDialog.setVisible(true);
+		customerUI = new CustomerUI();
 	}
 	
 	private void productUI() {
-		myDialog = new ProductUI();
-		myDialog.setVisible(true);
+		productUI = new ProductUI();
 	}
 	
 	private void saleUI() {
-		myFrame = new SaleUI();
-		myFrame.setVisible(true);
+		saleUI = new SaleUI();
+		saleUI.setVisible(true);
 	}
 }
