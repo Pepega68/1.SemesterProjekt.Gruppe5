@@ -77,9 +77,9 @@ public class CustomerUI extends JDialog {
 		phoneNumberText.setBounds(100,140,165,25);
 		panel.add(phoneNumberText);
 		
-		JLabel volapykLabel = new JLabel("Volapyk"); //personInfo?
-		volapykLabel.setBounds(10,170,80,25);
-		panel.add(volapykLabel);
+		JLabel personInfoLabel = new JLabel("Person Info"); //personInfo?
+	    personInfoLabel.setBounds(10,170,80,25);
+		panel.add(personInfoLabel);
 		
 		JTextField volaPykText = new JTextField(20); 
 		volaPykText.setBounds(100,170,165,25);

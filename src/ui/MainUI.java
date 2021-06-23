@@ -56,7 +56,7 @@ public class MainUI extends JFrame {
 			}
 		});
 		
-		btnNewButton.setBounds(335, 11, 89, 23);
+		btnNewButton.setBounds(320, 11, 104, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Products");
@@ -66,7 +66,7 @@ public class MainUI extends JFrame {
 			}
 		});
 		
-		btnNewButton_1.setBounds(335, 45, 89, 23);
+		btnNewButton_1.setBounds(320, 45, 104, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Sale Terminal");
@@ -75,7 +75,7 @@ public class MainUI extends JFrame {
 				saleUI();
 			}
 		});
-		btnNewButton_2.setBounds(230, 11, 95, 23);
+		btnNewButton_2.setBounds(186, 11, 124, 23);
 		contentPane.add(btnNewButton_2);
 	}
 	

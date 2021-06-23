@@ -21,6 +21,7 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JList;
 
 public class SaleUI extends JFrame {
 	
@@ -60,18 +61,13 @@ public class SaleUI extends JFrame {
         saleController = new SaleController(productController, personController);
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 432, 252);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0};
-		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		contentPane.setLayout(gbl_contentPane);
 		
-		JButton btnNewButton_1 = new JButton("Tlføj produkt til kurv");
+		JButton btnNewButton_1 = new JButton("Tilf\u00F8j produkt");
+		btnNewButton_1.setBounds(10, 57, 99, 23);
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -80,56 +76,37 @@ public class SaleUI extends JFrame {
 		});
 		
 		JButton btnNewButton = new JButton("Ny salg");
+		btnNewButton.setBounds(10, 11, 67, 23);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				createSale();
 			}
 		});
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 3;
-		contentPane.add(btnNewButton, gbc_btnNewButton);
+		contentPane.setLayout(null);
+		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Produktets stergkode");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel_1.gridx = 3;
-		gbc_lblNewLabel_1.gridy = 4;
-		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
-		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
-		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_1.gridx = 1;
-		gbc_btnNewButton_1.gridy = 5;
-		contentPane.add(btnNewButton_1, gbc_btnNewButton_1);
+		lblNewLabel_1.setBounds(119, 42, 110, 14);
+		contentPane.add(lblNewLabel_1);
+		contentPane.add(btnNewButton_1);
 		
 		textField_1 = new JTextField();
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.insets = new Insets(0, 0, 5, 0);
-		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_1.gridx = 3;
-		gbc_textField_1.gridy = 5;
-		contentPane.add(textField_1, gbc_textField_1);
+		textField_1.setBounds(119, 58, 110, 20);
+		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Antal af produkter");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel.gridx = 3;
-		gbc_lblNewLabel.gridy = 6;
-		contentPane.add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lblNewLabel = new JLabel("Antal");
+		lblNewLabel.setBounds(154, 89, 46, 14);
+		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 0);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 3;
-		gbc_textField.gridy = 7;
-		contentPane.add(textField, gbc_textField);
+		textField.setBounds(119, 101, 110, 20);
+		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Afslut salget");
+		btnNewButton_2.setBounds(10, 158, 99, 23);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				endSale();
@@ -137,25 +114,22 @@ public class SaleUI extends JFrame {
 		});
 		
 		JLabel lblNewLabel_2 = new JLabel("Kunde tlf. nummer");
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel_2.gridx = 3;
-		gbc_lblNewLabel_2.gridy = 9;
-		contentPane.add(lblNewLabel_2, gbc_lblNewLabel_2);
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_2.gridx = 1;
-		gbc_btnNewButton_2.gridy = 10;
-		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
+		lblNewLabel_2.setBounds(129, 145, 88, 14);
+		contentPane.add(lblNewLabel_2);
+		contentPane.add(btnNewButton_2);
 		
 		textField_2 = new JTextField();
-		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.insets = new Insets(0, 0, 5, 0);
-		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_2.gridx = 3;
-		gbc_textField_2.gridy = 10;
-		contentPane.add(textField_2, gbc_textField_2);
+		textField_2.setBounds(119, 159, 110, 20);
+		contentPane.add(textField_2);
 		textField_2.setColumns(10);
+		
+		JList list = new JList();
+		list.setBounds(239, 42, 165, 139);
+		contentPane.add(list);
+		
+		JLabel lblNewLabel_3 = new JLabel("Aktuel Kurv");
+		lblNewLabel_3.setBounds(283, 25, 82, 14);
+		contentPane.add(lblNewLabel_3);
 	}
 	
 	private void createSale() {
@@ -175,5 +149,4 @@ public class SaleUI extends JFrame {
 		//Integer phoneNumber = Integer.parseInt(textField_2.getText());
 		saleController.endSale(textField_2.getText());
 	}
-
 }
