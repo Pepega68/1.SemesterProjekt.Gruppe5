@@ -61,13 +61,13 @@ public class SaleUI extends JFrame {
         saleController = new SaleController(productController, personController);
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 432, 252);
+		setBounds(100, 100, 456, 252);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JButton btnNewButton_1 = new JButton("Tilf\u00F8j produkt");
-		btnNewButton_1.setBounds(10, 57, 99, 23);
+		btnNewButton_1.setBounds(10, 57, 119, 23);
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -75,8 +75,8 @@ public class SaleUI extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton = new JButton("Ny salg");
-		btnNewButton.setBounds(10, 11, 67, 23);
+		JButton btnNewButton = new JButton("Nyt salg");
+		btnNewButton.setBounds(10, 11, 82, 23);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -86,27 +86,27 @@ public class SaleUI extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Produktets stergkode");
-		lblNewLabel_1.setBounds(119, 42, 110, 14);
+		JLabel lblNewLabel_1 = new JLabel("Produktets stregkode");
+		lblNewLabel_1.setBounds(139, 43, 130, 14);
 		contentPane.add(lblNewLabel_1);
 		contentPane.add(btnNewButton_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(119, 58, 110, 20);
+		textField_1.setBounds(139, 58, 130, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Antal");
-		lblNewLabel.setBounds(154, 89, 46, 14);
+		lblNewLabel.setBounds(139, 89, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(119, 101, 110, 20);
+		textField.setBounds(139, 102, 130, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNewButton_2 = new JButton("Afslut salget");
-		btnNewButton_2.setBounds(10, 158, 99, 23);
+		btnNewButton_2.setBounds(10, 158, 119, 23);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				endSale();
@@ -114,17 +114,17 @@ public class SaleUI extends JFrame {
 		});
 		
 		JLabel lblNewLabel_2 = new JLabel("Kunde tlf. nummer");
-		lblNewLabel_2.setBounds(129, 145, 88, 14);
+		lblNewLabel_2.setBounds(139, 145, 110, 14);
 		contentPane.add(lblNewLabel_2);
 		contentPane.add(btnNewButton_2);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(119, 159, 110, 20);
+		textField_2.setBounds(139, 159, 130, 20);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
 		JList list = new JList();
-		list.setBounds(239, 42, 165, 139);
+		list.setBounds(279, 42, 151, 139);
 		contentPane.add(list);
 		
 		JLabel lblNewLabel_3 = new JLabel("Aktuel Kurv");
