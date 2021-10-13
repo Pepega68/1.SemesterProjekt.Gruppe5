@@ -94,6 +94,7 @@ public class ProductUI extends JDialog {
 			Integer quantity = Integer.parseInt(productQuantityText.getText());
 			productContainer.addProduct(product,quantity);
 			//frame.dispatchEvent(windowClosing);
+			frame.setVisible(false);
 			} 
 		});
 
